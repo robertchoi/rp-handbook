@@ -18,7 +18,8 @@ myPwm.ChangeFrequency(1500)
 cycleValue = 10
 
 for k in range(10):
-	cycleValue += 8 
+	cycleValue += 8
+	myPwm.ChangeDutyCycle(cycleValue) 
 	time.sleep(1)
 
 
