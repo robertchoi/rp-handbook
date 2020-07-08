@@ -3,19 +3,22 @@ import time
 
 led = 12
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(led, GPIO.OUT)
 
-myPwm = GPIO.PWM(12, 1000) # pin, frequency
+myPwm = GPIO.PWM(led, 1000) # pin, frequency
 myPwm.start(50) #dutycycle (0~100사이 값). 아두이노로 치면 analogWrite(18, 128)과 동일.
 
 # 출력값 변경 (0~100%)
-myPwm.ChangeDutyCycle(75)
+myPwm.ChangeDutyCycle(10)
 
 # Frequency  변경 (Hz)
 myPwm.ChangeFrequency(1500)
 
-for k in range(10): 
+cycleValue = 10
+
+for k in range(10):
+	cycleValue += 8 
 	time.sleep(1)
 
 
