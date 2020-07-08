@@ -8,7 +8,7 @@ camera.resolution=(1920,1080) #출력 해상도를 1920x1080으로 설정합니�
 camera.start_preview()  #프리뷰를 사작합니다.
 
 def main():  #엔터를 누르면 프로그램이 꺼지게 하는 메인함수 입니다.
-    print"Press Enter to quit..."
+    print("Press Enter to quit...")
     
     try:
         sys.stdin.readline()
