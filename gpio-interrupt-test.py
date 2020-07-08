@@ -15,7 +15,7 @@ GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(btn_input, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 # interrupt 선언
-GPIO.add_event_detect(12, GPIO.RISING, callback=switchPressed)
+GPIO.add_event_detect(btn_input, GPIO.RISING, callback=switchPressed)
 
 # 메인 쓰레드
 try:
@@ -24,4 +24,3 @@ try:
         time.sleep(0.1)
 finally:
     GPIO.cleanup()
-    
